@@ -41,3 +41,5 @@ staticfiles
 # Custom settings
 .settings
 
+# Mac krams ka 
+.DS_Store
