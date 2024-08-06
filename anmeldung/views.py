@@ -1,3 +1,6 @@
+
+# anmeldung/views.py
+
 from django.shortcuts import render, redirect
 from .forms import TeilnehmerForm
 
@@ -13,4 +16,3 @@ def anmelden(request):
 
 def danke(request):
     return render(request, 'anmeldung/danke.html')
-    

@@ -6,8 +6,15 @@
         /* Beispiel-Styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #3498db; /* Blaue Hintergrundfarbe */
             color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
         }
         .container {
             width: 50%;
@@ -15,6 +22,8 @@
             background-color: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            position: relative;
         }
         h1 {
             text-align: center;
@@ -46,6 +55,24 @@
             margin: 0 auto;
             width: 100px; /* Logo-Breite anpassen */
         }
+        .info-sheet {
+            position: absolute;
+            right: -220px; /* Positionierung anpassen */
+            top: 20px;
+            background: rgba(0, 0, 0, 0.7); /* Dunklerer Hintergrund für das Info-Sheet */
+            padding: 15px;
+            border-radius: 8px;
+            color: #fff;
+            max-width: 200px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .info-sheet h2 {
+            font-size: 18px;
+            margin-top: 0;
+        }
+        .info-sheet p {
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
@@ -58,6 +85,13 @@
             {{ form.as_p }}
             <button type="submit">Anmelden</button>
         </form>
+        <div class="info-sheet">
+            <h2>Info</h2>
+            <p>31.08.2024</p>
+            <p>Am Starzenbach, 82340 Feldafing</p>
+            <p>4+1 Spieler Pro Team</p>
+            <p>Fragen?<br> -> +49 176 8513 1778</p>
+        </div>
     </div>
 </body>
 </html>
