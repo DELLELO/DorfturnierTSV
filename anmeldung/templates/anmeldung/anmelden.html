@@ -2,10 +2,11 @@
 <html>
 <head>
     <title>Anmeldung</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Beispiel-Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: #3498db; /* Blaue Hintergrundfarbe */
             color: #333;
             margin: 0;
@@ -21,12 +22,13 @@
             margin: 0 auto;
             background-color: #fff;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
             position: relative;
         }
         h1 {
             text-align: center;
+            font-weight: 700;
         }
         form {
             display: flex;
@@ -34,10 +36,13 @@
         }
         label {
             margin-top: 10px;
+            font-weight: 500;
         }
         input {
             padding: 10px;
             margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
         button {
             margin-top: 20px;
@@ -45,7 +50,9 @@
             background-color: #4CAF50;
             color: white;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
+            font-weight: 700;
         }
         button:hover {
             background-color: #45a049;
@@ -57,21 +64,24 @@
         }
         .info-sheet {
             position: absolute;
-            right: -220px; /* Positionierung anpassen */
+            right: -250px; /* Positionierung anpassen */
             top: 20px;
-            background: rgba(0, 0, 0, 0.7); /* Dunklerer Hintergrund für das Info-Sheet */
-            padding: 15px;
-            border-radius: 8px;
-            color: #fff;
-            max-width: 200px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            background: #2c3e50; /* Dunklere Farbe */
+            padding: 20px;
+            border-radius: 10px;
+            color: #ecf0f1;
+            max-width: 250px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
         .info-sheet h2 {
-            font-size: 18px;
+            font-size: 20px;
             margin-top: 0;
+            font-weight: 700;
         }
         .info-sheet p {
-            margin: 5px 0;
+            margin: 10px 0;
+            font-weight: 400;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -88,7 +98,7 @@
         <div class="info-sheet">
             <h2>Info</h2>
             <p>31.08.2024</p>
-            <p>15€ Startgebühr</p>
+            <p>10€ Startgebühr</p>
             <p>Am Starzenbach, 82340 Feldafing</p>
             <p>4+1 Spieler Pro Team</p>
             <p>Fragen?<br> -> +49 176 8513 1778</p>
