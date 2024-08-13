@@ -2,13 +2,34 @@
 <html>
 <head>
     <title>Danke</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Beispiel-Styles */
         body {
-            font-family: 'Calibri', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            background-color: #3498db; /* Blaue Hintergrundfarbe */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            position: relative;
+            text-align: center;
         }
         h1 {
-            font-size: 20px;
-            color: #333;
+            text-align: center;
+            font-weight: 700;
         }
         h4 {
             font-size: 16px;
@@ -33,16 +54,21 @@
         .paypal-button:hover {
             background-color: #005ea6;
         }
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            width: 100px; /* Logo-Breite anpassen */
+        }
     </style>
 </head>
 <body>
-    <h1>Danke für deine Anmeldung!</h1>
-    <h4>Du kannst die Seite jetzt schließen.</h4>
-
-    <!-- Erklärender Text -->
-    <p>Die Anmeldegebühr beträgt 10€. Du kannst die Gebühr direkt über den folgenden PayPal-Link bezahlen:</p>
-
-    <!-- PayPal.me Button -->
-    <a href="https://www.paypal.com/paypalme/barbapapi/10" class="paypal-button">10€ via PayPal zahlen</a>
+    <div class="container">
+        {% load static %} <!-- Statische Dateien laden -->
+        <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo"> <!-- Logo hinzufügen -->
+        <h1>Danke für deine Anmeldung!</h1>
+        <h4>Du kannst die Seite jetzt schließen.</h4>
+        <p>Die Anmeldegebühr beträgt 10€. Hier direkt per PayPal bezahlen (Im Betreff bitte Teamname angeben):</p>
+        <a href="https://www.paypal.com/paypalme/barbapapi/10" class="paypal-button">10€ via PayPal zahlen</a>
+    </div>
 </body>
 </html>
