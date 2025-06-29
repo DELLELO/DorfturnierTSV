@@ -110,13 +110,3 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-from pathlib import Path
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-STATIC_URL = "/static/"
-
-# Ordner /static/ im Projektwurzelverzeichnis einbinden
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
