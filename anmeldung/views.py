@@ -4,7 +4,7 @@
 from django.shortcuts import render, redirect
 from .forms import TeilnehmerForm
 
-def anmelden(request):
+def anmeldeformular(request):
     if request.method == 'POST':
         form = TeilnehmerForm(request.POST)
         if form.is_valid():

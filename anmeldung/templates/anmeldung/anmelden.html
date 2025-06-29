@@ -84,20 +84,45 @@
             line-height: 1.6;
         }
     </style>
+    <style>
+    @media (max-width: 768px) {
+        .container {
+            width: 90%;
+            padding: 15px;
+        }
+        .info-sheet {
+            position: static;
+            margin-top: 20px;
+            max-width: 100%;
+            width: auto;
+        }
+    }
+
+    body {
+        background: linear-gradient(to right, #1e3c72, #2a5298);
+    }
+    </style>
 </head>
 <body>
     <div class="container">
         {% load static %} <!-- Statische Dateien laden -->
         <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo"> <!-- Logo hinzufügen -->
-        <h1>Anmeldung zum Dorfturnier 2024</h1>
+        <h1>Anmeldung zum Dorfturnier 2025</h1>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form.non_field_errors }}
+            {% for field in form %}
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <div style="color: red;">{{ field.errors|striptags }}</div>
+                {% endif %}
+            {% endfor %}
             <button type="submit">Anmelden</button>
         </form>
         <div class="info-sheet">
             <h2>Info</h2>
-            <p>31.08.2024</p>
+            <p>Samstag, 26.07.2025</p>
             <p>10€ Startgebühr</p>
             <p>Am Starzenbach, 82340 Feldafing</p>
             <p>4+1 Spieler Pro Team</p>
