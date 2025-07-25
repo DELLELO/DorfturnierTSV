@@ -108,6 +108,8 @@
         {% load static %} <!-- Statische Dateien laden -->
         <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo"> <!-- Logo hinzufügen -->
         <h1>Anmeldung zum Dorfturnier 2025</h1>
+        
+        {% if config.show_registration_form %}
         <form method="post">
             {% csrf_token %}
             {{ form.non_field_errors }}
@@ -120,13 +122,32 @@
             {% endfor %}
             <button type="submit">Anmelden</button>
         </form>
+        {% endif %}
+        
         <div class="info-sheet">
-            <h2>Info</h2>
-            <p>Samstag, 26.07.2025</p>
-            <p>10€ Startgebühr</p>
-            <p>Am Starzenbach, 82340 Feldafing</p>
-            <p>4+1 Spieler Pro Team</p>
-            <p>Fragen?<br> -> +49 176 8513 1778</p>
+            {% if config.active_mode == 'standard' %}
+                <h2>{{ config.standard_title }}</h2>
+                <p>{{ config.standard_date }}</p>
+                <p>{{ config.standard_fee }}</p>
+                <p>{{ config.standard_location }}</p>
+                <p>{{ config.standard_team_info }}</p>
+                <p>{{ config.standard_contact|linebreaks }}</p>
+            {% elif config.active_mode == 'cancelled' %}
+                <h2>{{ config.cancelled_title }}</h2>
+                <p>{{ config.cancelled_message|linebreaks }}</p>
+                <p>{{ config.cancelled_contact|linebreaks }}</p>
+            {% elif config.active_mode == 'custom' %}
+                <h2>{{ config.custom_title }}</h2>
+                <div>{{ config.custom_content|linebreaks|safe }}</div>
+            {% else %}
+                <!-- Fallback für den Fall, dass keine Konfiguration existiert -->
+                <h2>Info</h2>
+                <p>Samstag, 26.07.2025</p>
+                <p>10€ Startgebühr</p>
+                <p>Am Starzenbach, 82340 Feldafing</p>
+                <p>4+1 Spieler Pro Team</p>
+                <p>Fragen?<br> -> +49 176 8513 1778</p>
+            {% endif %}
         </div>
     </div>
 </body>
